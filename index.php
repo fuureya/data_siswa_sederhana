@@ -45,7 +45,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="addForm">
+                    <form id="addForm" method="post" action="service/RegisterService.php">
                         <div class="form-group">
                             <label for="namaLengkap">Nama Lengkap</label>
                             <input type="text" class="form-control" id="namaLengkap" required>
@@ -70,7 +70,7 @@
                             <label for="foto">Foto URL</label>
                             <input type="file" class="form-control" id="foto" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
                     </form>
                 </div>
             </div>
