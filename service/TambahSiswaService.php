@@ -9,5 +9,14 @@ if (isset($_POST["submit"])) {
     $nisn =  $_POST['nisn'];
 }
 
+$query = "INSERT INTO siswa (nama_lengkap, tanggal_lahir, tempat_lahir, nis, nisn) 
+              VALUES ('$nama_lengkap', '$tanggal_lahir', '$tempat_lahir', '$nis', '$nisn')";
+
+if (mysqli_query($connection, $query)) {
+    return header('Location: ../index.php');
+} else {
+    echo "Error: " . mysqli_error($connection);
+}
+
 // Menutup koneksi
 mysqli_close($connection);

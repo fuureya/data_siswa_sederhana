@@ -1,6 +1,9 @@
 <?php
-
+require_once __DIR__ . "/service/db.php";
 require_once __DIR__ . "/service/session.php";
+
+$query = "SELECT * FROM siswa";
+$result = mysqli_query($connection, $query);
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +40,19 @@ require_once __DIR__ . "/service/session.php";
             </thead>
             <tbody>
                 <!-- Data akan ditambahkan di sini -->
+                <?php
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<tr>';
+                    echo '<td>' . htmlspecialchars($row['nama_lengkap']) . '</td>';
+                    echo '<td>' . htmlspecialchars($row['tanggal_lahir']) . '</td>';
+                    echo '<td>' . htmlspecialchars($row['tempat_lahir']) . '</td>';
+                    echo '<td>' . htmlspecialchars($row['nis']) . '</td>';
+                    echo '<td>' . htmlspecialchars($row['nisn']) . '</td>';
+                    echo '<td> test  </td>';
+                    echo '</tr>';
+                }
+                ?>
+
             </tbody>
         </table>
     </div>
