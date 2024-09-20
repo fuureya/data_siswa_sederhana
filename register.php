@@ -29,7 +29,7 @@
             <button type="submit" class="btn btn-primary btn-block" name="submit">Daftar</button>
         </form>
         <div class="text-center mt-3">
-            <a href="#">Sudah punya akun? Masuk</a>
+            <a href="login.php">Sudah punya akun? Masuk</a>
         </div>
     </div>
 

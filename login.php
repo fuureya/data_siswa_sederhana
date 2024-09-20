@@ -15,13 +15,13 @@
         <form>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Masukkan username" required autocomplete="off">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan username" required autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="password">Kata Sandi</label>
-                <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required autocomplete="off">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan kata sandi" required autocomplete="off">
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+            <button type="submit" class="btn btn-primary btn-block" name="submit">Masuk</button>
         </form>
         <div class="text-center mt-3">
             <a href="#">Register</a>
