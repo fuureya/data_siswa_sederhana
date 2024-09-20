@@ -5,7 +5,7 @@ require_once __DIR__ . "/db.php";
 session_start();
 
 // Memeriksa apakah form sudah disubmit
-if (isset($_POST["login"])) {
+if (isset($_POST["submit"])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
@@ -22,7 +22,7 @@ if (isset($_POST["login"])) {
             $_SESSION['nama_lengkap'] = $user['nama_lengkap'];
 
             // Arahkan ke halaman lain jika diperlukan
-            // header("Location: homepage.php");
+            header("Location: ../index.php");
         } else {
             echo "Kata sandi salah!";
         }

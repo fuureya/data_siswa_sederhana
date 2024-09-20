@@ -1,3 +1,8 @@
+<?php
+
+require_once __DIR__ . "/service/session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +18,9 @@
 <body>
 
     <div class="siswa table-container p-5">
+        <div class="w-100 d-flex justify-content-end">
+            <a href="logout.php" class="btn btn-danger">Logout</a>
+        </div>
         <h2 class="text-center">Data Siswa SMA Sakura</h2>
         <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#addModal">Tambah Data</button>
 

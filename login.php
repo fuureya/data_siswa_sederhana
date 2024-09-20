@@ -12,7 +12,7 @@
 <body>
     <div class="login login-container mt-5">
         <h2 class="text-center">Login</h2>
-        <form>
+        <form action="service/LoginService.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan username" required autocomplete="off">
@@ -24,7 +24,7 @@
             <button type="submit" class="btn btn-primary btn-block" name="submit">Masuk</button>
         </form>
         <div class="text-center mt-3">
-            <a href="#">Register</a>
+            <a href="register.php">Register</a>
         </div>
     </div>
 
