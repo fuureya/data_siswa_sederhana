@@ -32,7 +32,6 @@ require_once __DIR__ . "/service/session.php";
                     <th>Tempat Lahir</th>
                     <th>NIS</th>
                     <th>NISN</th>
-                    <th>Foto</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -53,31 +52,28 @@ require_once __DIR__ . "/service/session.php";
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="addForm" method="post" action="service/RegisterService.php">
+                    <form id="addForm" method="post" action="service/TambahSiswaService.php">
                         <div class="form-group">
                             <label for="namaLengkap">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="namaLengkap" required>
+                            <input type="text" class="form-control" id="namaLengkap" name="nama_lengkap" required>
                         </div>
                         <div class="form-group">
                             <label for="tanggalLahir">Tanggal Lahir</label>
-                            <input type="date" class="form-control" id="tanggalLahir" required>
+                            <input type="date" class="form-control" id="tanggalLahir" name="tanggal_lahir" required>
                         </div>
                         <div class="form-group">
                             <label for="tempatLahir">Tempat Lahir</label>
-                            <input type="text" class="form-control" id="tempatLahir" required>
+                            <input type="text" class="form-control" id="tempatLahir" name="tempat_lahir" required>
                         </div>
                         <div class="form-group">
                             <label for="nis">NIS</label>
-                            <input type="text" class="form-control" id="nis" required>
+                            <input type="text" class="form-control" id="nis" name="nis" required>
                         </div>
                         <div class="form-group">
                             <label for="nisn">NISN</label>
-                            <input type="text" class="form-control" id="nisn" required>
+                            <input type="text" class="form-control" id="nisn" name="nisn" required>
                         </div>
-                        <div class="form-group">
-                            <label for="foto">Foto URL</label>
-                            <input type="file" class="form-control" id="foto" required>
-                        </div>
+
                         <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
                     </form>
                 </div>
