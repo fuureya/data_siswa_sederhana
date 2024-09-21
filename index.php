@@ -39,21 +39,25 @@ $result = mysqli_query($connection, $query);
                 </tr>
             </thead>
             <tbody>
-                <!-- Data akan ditambahkan di sini -->
+                <!-- Data will be added here -->
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<tr>';
-                    echo '<td>' . htmlspecialchars($row['nama_lengkap']) . '</td>';
-                    echo '<td>' . htmlspecialchars($row['tanggal_lahir']) . '</td>';
-                    echo '<td>' . htmlspecialchars($row['tempat_lahir']) . '</td>';
-                    echo '<td>' . htmlspecialchars($row['nis']) . '</td>';
-                    echo '<td>' . htmlspecialchars($row['nisn']) . '</td>';
-                    echo '<td> test  </td>';
+                    echo '<td>' . $row['nama_lengkap'] . '</td>';
+                    echo '<td>' . $row['tanggal_lahir'] . '</td>';
+                    echo '<td>' . $row['tempat_lahir'] . '</td>';
+                    echo '<td>' . $row['nis'] . '</td>';
+                    echo '<td>' . $row['nisn'] . '</td>';
+                    echo '<td>
+                <a href="update.php?id=' . $row['id'] . '" class="btn btn-success badge">Update</a>
+                <a href="delete.php?id=' . $row['id'] . '" class="btn btn-danger badge">Delete</a>
+              </td>';
                     echo '</tr>';
                 }
                 ?>
-
             </tbody>
+
+
         </table>
     </div>
 

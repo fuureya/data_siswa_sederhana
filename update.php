@@ -1,3 +1,16 @@
+<?php
+require_once __DIR__ . "/service/db.php";
+require_once __DIR__ . "/service/session.php";
+
+if (isset($_GET["id"])) {
+    // Ambil data berdasarkan id
+    $id = $_GET['id'];
+    $data = mysqli_query($connection, "SELECT * FROM siswa WHERE id = '$id' ");
+    $result = mysqli_fetch_assoc($data);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,32 +27,30 @@
 
     <div class="update-form update-container mt-5">
         <h2 class="text-center">Update Data Siswa</h2>
-        <form id="updateForm">
+        <form id="updateForm" action="service/UpdateSiswaService.php" method="post">
+            <input type="hidden" name="id" value="<?= $result['id'] ?>">
             <div class="form-group">
                 <label for="updateNamaLengkap">Nama Lengkap</label>
-                <input type="text" class="form-control" id="updateNamaLengkap" required>
+                <input type="text" class="form-control" id="updateNamaLengkap" name="nama_lengkap" value="<?= $result['nama_lengkap'] ?>" required>
             </div>
             <div class="form-group">
                 <label for="updateTanggalLahir">Tanggal Lahir</label>
-                <input type="date" class="form-control" id="updateTanggalLahir" required>
+                <input type="date" class="form-control" id="updateTanggalLahir" name="tanggal_lahir" value="<?= $result['tanggal_lahir'] ?>" required>
             </div>
             <div class="form-group">
                 <label for="updateTempatLahir">Tempat Lahir</label>
-                <input type="text" class="form-control" id="updateTempatLahir" required>
+                <input type="text" class="form-control" id="updateTempatLahir" name="tempat_lahir" value="<?= $result['tempat_lahir'] ?>" required>
             </div>
             <div class="form-group">
                 <label for="updateNIS">NIS</label>
-                <input type="text" class="form-control" id="updateNIS" required>
+                <input type="text" class="form-control" id="updateNIS" name="nis" value="<?= $result['nis'] ?>" required>
             </div>
             <div class="form-group">
                 <label for="updateNISN">NISN</label>
-                <input type="text" class="form-control" id="updateNISN" required>
+                <input type="text" class="form-control" id="updateNISN" name="nisn" value="<?= $result['nisn'] ?>" required>
             </div>
-            <div class="form-group">
-                <label for="updateFoto">Foto URL</label>
-                <input type="file" class="form-control" id="updateFoto" placeholder="Masukkan URL foto">
-            </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+
+            <button type="submit" name="submit" class="btn btn-primary">Update</button>
             <a href="index.php" class="btn btn-danger">Kembali</a>
         </form>
     </div>
